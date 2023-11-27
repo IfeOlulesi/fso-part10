@@ -1,10 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
+import Greet from './src/Greet';
+import PressableText from "./src/PressableText";
 
 export default function App() {
+  console.log("Hello world")
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Greet name={"Bob"} />
+      <PressableText />
       <StatusBar style="auto" />
     </View>
   );
