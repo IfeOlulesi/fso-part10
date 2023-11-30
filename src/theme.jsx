@@ -6,7 +6,8 @@ const theme = {
     mintGreen: "#3EB489",
     scarletRed: "#FF2400",
     royalBlue: "#246EE9",
-    white: "#FFFFFF"
+    white: "#FFFFFF",
+    bgGrey: "#808080"
   },
   fontSizes: {
     body: 14,

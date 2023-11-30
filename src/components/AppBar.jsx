@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
-  const tabs = ["Repositories", "Register"];
+  const tabs = ["Repositories"];
 
   function handleTabPress(tabName) {
     Alert.alert(`You pressed ${tabName}`)
