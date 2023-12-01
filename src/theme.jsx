@@ -7,7 +7,7 @@ const theme = {
     scarletRed: "#FF2400",
     royalBlue: "#246EE9",
     white: "#FFFFFF",
-    bgGrey: "#808080"
+    bgGrey: "#DBDBDB"
   },
   fontSizes: {
     body: 14,
