@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
   headerTextContainer: {
     paddingLeft: 15,
     gap: 5,
+    width: "90%",
   },
   title: {
     fontWeight: "bold",
@@ -84,7 +85,7 @@ const RepositoryItem = ({ item }) => {
         />
         <View style={styles.headerTextContainer}>
           <Text style={styles.title}>{item.fullName}</Text>
-          <View style={{flexDirection:'row'}}>
+          <View style={{display: "flex", flexDirection:'row'}}>
             <Text style={styles.subTitle}>{item.description}</Text>
           </View>
           <Text style={styles.languageTag}>{item.language}</Text>
