@@ -1,5 +1,6 @@
 import { View, Text, Image, StyleSheet } from "react-native";
 import theme from "../theme";
+import { abbreviateNumber } from "js-abbreviation-number";
 
 const styles = StyleSheet.create({
   itemContainer: {
@@ -26,15 +27,15 @@ const styles = StyleSheet.create({
     marginTop: 5,
     color: theme.colors.textSecondary,
     flexWrap: "wrap",
-
+    flex: 1,
   },
   languageTag: {
     backgroundColor: theme.colors.royalBlue,
-    padding: 6,
+    padding: 4,
     borderRadius: 4,
-    marginTop: 5,
+    marginTop: 8,
     color: theme.colors.white,
-    maxWidth: "auto"
+    alignSelf: "flex-start"
   },
   dataContainer: {
     flexDirection: "row",
@@ -44,9 +45,11 @@ const styles = StyleSheet.create({
     paddingRight: 30,
   },
   dataItem: {
+    display: "flex",
     flexDirection: "column",
     alignContent: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    alignItems: "center",
   }
 });
 
@@ -81,14 +84,16 @@ const RepositoryItem = ({ item }) => {
         />
         <View style={styles.headerTextContainer}>
           <Text style={styles.title}>{item.fullName}</Text>
-          <Text style={styles.subTitle}>{item.description}</Text>
+          <View style={{flexDirection:'row'}}>
+            <Text style={styles.subTitle}>{item.description}</Text>
+          </View>
           <Text style={styles.languageTag}>{item.language}</Text>
         </View>
       </View>
       <View style={styles.dataContainer}>
         {itemData.map((data) => (
           <View key={data.value} style={styles.dataItem}>
-            <Text style={styles.title}>{data.value}</Text>
+            <Text style={styles.title}>{abbreviateNumber(data.value, 1)}</Text>
             <Text>{data.label}</Text>
           </View>
         ))}
