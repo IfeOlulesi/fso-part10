@@ -1,4 +1,4 @@
-import { View, StyleSheet, Alert } from "react-native";
+import { View, StyleSheet } from "react-native";
 import Constants from "expo-constants";
 
 import theme from "../theme";
@@ -21,16 +21,17 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
-  const tabs = ["Repositories"];
+  const tabs = [
+    {name: "Repositories", path: '/'},
+    {name: "Sign In", path: '/sign-in'},
+  ];
 
-  function handleTabPress(tabName) {
-    Alert.alert(`You pressed ${tabName}`)
-  }
+  
   return (
     <View style={styles.container}>
       <View style={styles.tabsContainer}>
         {tabs.map((tab) => (
-          <AppBarTab onPressHandler={() => handleTabPress(tab)} key={tab} tabName={tab} />
+          <AppBarTab path={tab.path} key={tab.name} tabName={tab.name} />
         ))}
       </View>
     </View>
