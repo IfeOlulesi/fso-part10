@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "lightgrey",
     padding: 15,
-    // marginBottom: 20,
     borderRadius: 4,
   },
   signInButton: {
@@ -56,28 +55,28 @@ const SignIn = () => {
       initialValues={initial_values}
       onSubmit={handleSubmit}
     >
-      <View style={styles.viewContainer}>
-        <FormikTextInput
-          style={styles.textInput}
-          name={"username"}
-          placeholder="Username"
-        />
-        <FormikTextInput
-          style={styles.textInput}
-          name={"password"}
-          placeholder="Password"
-        />
-        <Pressable style={styles.signInButton} onPress={handleSubmit}>
-          <Text
-            style={styles.buttonText}
-            color={"white"}
-            fontWeight={"bold"}
-            fontSize={"subheading"}
-          >
-            Sign In
-          </Text>
-        </Pressable>
-      </View>
+      {({ handleSubmit }) => (
+        <View style={styles.viewContainer}>
+          <FormikTextInput
+            style={styles.textInput}
+            name={"username"}
+            placeholder="Username"
+          />
+          <FormikTextInput
+            style={styles.textInput}
+            name={"password"}
+            placeholder="Password"
+            secureTextEntry={true}
+          />
+          <Pressable style={styles.signInButton} onPress={handleSubmit}>
+            <View style={styles.buttonText}>
+              <Text color={"white"} fontWeight={"bold"} fontSize={"subheading"}>
+                Sign In
+              </Text>
+            </View>
+          </Pressable>
+        </View>
+      )}
     </Formik>
   );
 };
